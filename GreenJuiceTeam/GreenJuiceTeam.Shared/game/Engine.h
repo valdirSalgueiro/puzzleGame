@@ -30,6 +30,13 @@
 
 #include "core/gl2d.h"
 #include "Vector2D.h"
+#include <map>
+
+#include "TMXLoader.h"
+#include "Player.h"
+#include "Items.h"
+#include "fireball.h"
+#include "EnemyManager.h"
 
 class Engine{
 public:
@@ -41,27 +48,40 @@ public:
 		DOWN = 1<<3
 	};
 
-	~Engine();
-	Engine();
+	enum STATE {
+		LOGO1,
+		LOGO2,
+		TITLE,
+		INSTRUCT,
+		STARTER,
+		PLAYING,
+		GAMEOVER
+	};
+
 	void init(int, int);
 	void update(float);
 	void render(float);
 
-	void setTouch(bool);
+	void playing(float);
 
-	Vector2D<float> controlKnobPos;
-	Vector2D<float> controlBasePos;
+	void handleInput(int, int, int);
+
+	STATE gameState;
 
 private:	
 	bool touch;
 	int width, height;
 
-	glImage* logo;
+	Player* player;
+	Items* items;
+	Fireball* fireball;
+	bool showItems;
 
-	//mobile 
-	glImage* controlBase;
-	glImage* controlKnob;
-	
+	std::map<std::string, int> sounds;
+
+	TMXLoader* tmxLoader;
+
+	int frames;
 
 };
 

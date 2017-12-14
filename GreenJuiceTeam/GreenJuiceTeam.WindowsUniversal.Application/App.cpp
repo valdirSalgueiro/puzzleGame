@@ -78,6 +78,8 @@ void App::SetWindow(CoreWindow^ window)
 
 	window->KeyDown += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyDown);
 	window->KeyUp += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyUp);
+	window->PointerPressed += ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &App::OnPointerDown);
+	window->PointerReleased += ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &App::OnPointerUp);
 
 	// The CoreWindow has been created, so EGL can be initialized.
 	InitializeEGL(window);
@@ -175,8 +177,17 @@ void GreenJuiceTeam::App::ProcessInput()
 	}
 	else if (GamepadButtons::None == (m_reading.Buttons & GamepadButtons::A))
 	{
-		engine->setTouch(false);
+		//engine->setTouch(false);
 	}
+}
+
+void App::OnPointerDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args)
+{
+	engine->handleInput(0, args->CurrentPoint->Position.X, args->CurrentPoint->Position.Y);
+}
+
+void App::OnPointerUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args)
+{
 }
 
 // Terminate events do not cause Uninitialize to be called. It will be called if your IFrameworkView
@@ -225,8 +236,8 @@ void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::Ke
 	else if (args->VirtualKey == Windows::System::VirtualKey::Down)
 		dir |= Engine::DIRECTION::DOWN;
 
-	if (args->VirtualKey == Windows::System::VirtualKey::Space)
-		engine->setTouch(true);
+	//if (args->VirtualKey == Windows::System::VirtualKey::Space)
+	//	engine->setTouch(true);
 
 
 }
@@ -245,8 +256,8 @@ void App::OnKeyUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyE
 	if (args->VirtualKey == Windows::System::VirtualKey::Down)
 		dir &= ~Engine::DIRECTION::DOWN;
 
-	if (args->VirtualKey == Windows::System::VirtualKey::Space)
-		engine->setTouch(false);
+	//if (args->VirtualKey == Windows::System::VirtualKey::Space)
+	//	engine->setTouch(false);
 
 }
 
@@ -381,7 +392,7 @@ void App::InitializeEGL(CoreWindow^ window)
 
 	//Size customRenderSurfaceSize = Size(800, 480);
 	//surfaceCreationProperties->Insert(ref new String(EGLRenderSurfaceSizeProperty), PropertyValue::CreateSize(customRenderSurfaceSize));
-	
+
 
 	mEglSurface = eglCreateWindowSurface(mEglDisplay, config, reinterpret_cast<IInspectable*>(surfaceCreationProperties), surfaceAttributes);
 	if (mEglSurface == EGL_NO_SURFACE)

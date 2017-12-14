@@ -97,7 +97,29 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Image Include="..\res\logo.png" />
+    <Image Include="..\res\fogo-colide.png" />
+    <Image Include="..\res\fogo-player.png" />
+    <Image Include="..\res\inimigo01-baixo.png" />
+    <Image Include="..\res\inimigo01-cima.png" />
+    <Image Include="..\res\inimigo01-direita.png" />
+    <Image Include="..\res\inimigo01-esquerda.png" />
+    <Image Include="..\res\inimigo01-morre.png" />
+    <Image Include="..\res\inimigo02-morre.png" />
+    <Image Include="..\res\inimigo03-baixo.png" />
+    <Image Include="..\res\inimigo03-cima.png" />
+    <Image Include="..\res\inimigo03-direita.png" />
+    <Image Include="..\res\inimigo03-esquerda.png" />
+    <Image Include="..\res\inimigo03-tiro.png" />
+    <Image Include="..\res\items.png" />
+    <Image Include="..\res\key_level.png" />
+    <Image Include="..\res\morre-fogo.png" />
+    <Image Include="..\res\pisoquebrando.png" />
+    <Image Include="..\res\player-anda-baixo.png" />
+    <Image Include="..\res\player-anda-cima.png" />
+    <Image Include="..\res\player-anda-direita.png" />
+    <Image Include="..\res\player-anda-esquerda.png" />
+    <Image Include="..\res\saida.png" />
+    <Image Include="..\res\tileset.png" />
     <Image Include="Assets\Logo.scale-100.png" />
     <Image Include="Assets\SmallLogo.scale-100.png" />
     <Image Include="Assets\StoreLogo.scale-100.png" />
@@ -122,12 +144,12 @@
     <None Include="GreenJuiceTeam_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\GreenJuiceTeam.WindowsUniversal.StaticLibrary\GreenJuiceTeam.WindowsUniversal.StaticLibrary.vcxproj">
       <Project>{d1738bbf-8d59-4137-ac18-f1f2c9230c4a}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

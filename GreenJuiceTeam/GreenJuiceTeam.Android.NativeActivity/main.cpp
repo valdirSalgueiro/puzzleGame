@@ -187,56 +187,18 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
 	if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION) {
 		float x = AMotionEvent_getX(event, 0);
 		float y = AMotionEvent_getY(event, 0);
-		x *= 800.0f/engine->width;
-		y *= 480.0f/engine->height;
+		x *= 800.0f / engine->width;
+		y *= 480.0f / engine->height;
 
 		int motion = AMotionEvent_getAction(event);
 		unsigned int action = motion & AMOTION_EVENT_ACTION_MASK;
 
 		if (engine->engine != NULL) {
-			if (action == AMOTION_EVENT_ACTION_DOWN) {
-				if (isPointInCircle(Vector2D<float>(x, y), Vector2D<float>(engine->engine->controlBasePos), JOYSTICK_RADIUS)) {
-					isPressedPos = true;
-				}
-				engine->engine->setTouch(true);
-
-			}
-			else if (action == AMOTION_EVENT_ACTION_UP)
+			if (action == AMOTION_EVENT_ACTION_DOWN)
 			{
-				isPressedPos = false;
-				engine->engine->controlKnobPos = engine->engine->controlBasePos;
-				touchDirection = 0;
-				engine->engine->setTouch(false);
+				engine->engine->handleInput(0, x, y);
 			}
 
-			if (isPressedPos) {
-				//DPAD
-				float dx = x - engine->engine->controlBasePos.x;
-				float dy = y - engine->engine->controlBasePos.y;
-				float angle = atan2(dy, dx); // in radians
-
-				float anglePerSector = 360.0f / 4 * (M_PI / 180.0f);
-				angle = roundf(angle / anglePerSector) * anglePerSector;
-
-				Vector2D<float> velocity = Vector2D<float>(cos(angle), sin(angle));
-
-				engine->engine->controlKnobPos.x = engine->engine->controlBasePos.x + cos(angle) * THUMB_RADIUS;
-				engine->engine->controlKnobPos.y = engine->engine->controlBasePos.y + sin(angle) * THUMB_RADIUS;
-
-				touchDirection = 0;
-				if (((int)velocity.x) == -1) {
-					touchDirection |= Engine::DIRECTION::LEFT;
-				}
-				else if (((int)velocity.y) == 1) {
-					touchDirection |= Engine::DIRECTION::DOWN;
-				}
-				else if (((int)velocity.x) == 1) {
-					touchDirection |= Engine::DIRECTION::RIGHT;
-				}
-				else if (((int)velocity.y) == -1) {
-					touchDirection |= Engine::DIRECTION::UP;
-				}
-			}
 		}
 		return 1;
 	}

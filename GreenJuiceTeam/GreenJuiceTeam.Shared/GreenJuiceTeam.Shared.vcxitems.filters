@@ -247,6 +247,24 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)game\sound\sound.cpp">
       <Filter>game\sound</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Enemy.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\EnemyManager.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\fireball.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Items.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Player.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\TMXLoader.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="game">

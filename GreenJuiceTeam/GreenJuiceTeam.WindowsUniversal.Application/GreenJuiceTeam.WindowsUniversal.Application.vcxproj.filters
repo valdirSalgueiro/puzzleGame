@@ -24,7 +24,73 @@
     <Image Include="Assets\Logo.scale-100.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\res\logo.png">
+    <Image Include="..\res\fogo-colide.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\fogo-player.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo01-baixo.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo01-cima.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo01-direita.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo01-esquerda.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo01-morre.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo02-morre.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo03-baixo.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo03-cima.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo03-direita.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo03-esquerda.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\inimigo03-tiro.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\items.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\key_level.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\morre-fogo.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\pisoquebrando.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\player-anda-baixo.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\player-anda-cima.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\player-anda-direita.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\player-anda-esquerda.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\saida.png">
+      <Filter>Assets\game</Filter>
+    </Image>
+    <Image Include="..\res\tileset.png">
       <Filter>Assets\game</Filter>
     </Image>
   </ItemGroup>
@@ -34,9 +100,9 @@
   <ItemGroup>
     <None Include="GreenJuiceTeam_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="..\libs\fmod_X64.dll" />
     <None Include="$(angle-BinPath)\libEGL.dll" />
     <None Include="$(angle-BinPath)\libGLESv2.dll" />
-    <None Include="..\libs\fmod_X64.dll" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Assets">
