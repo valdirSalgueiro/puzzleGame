@@ -2,7 +2,7 @@
 
 Items::Items(){
 	spr=new glImage();
-	glLoadTileSet("items.png",spr,128,128,128,128);  
+	glLoadTileSet("items.png",spr,400, 400, 400, 400);
 }
 
 Items::~Items(){
