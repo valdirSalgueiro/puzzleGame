@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GreenJuiceTeam.iOS">
+      <UniqueIdentifier>{72a03917-98ff-45f8-a589-c7cc17cc963c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GreenJuiceTeam.iOS\Images.xcassets">
+      <UniqueIdentifier>{09d334e9-fb93-4b2e-a28c-ecce0a070b69}</UniqueIdentifier>
+      <Extensions>GreenJuiceTeam.iOS\Images.xcassets\*</Extensions>
+    </Filter>
+    <Filter Include="GreenJuiceTeam.iOS\Images.xcassets\AppIcon.appiconset">
+      <UniqueIdentifier>{420f62e5-88cb-4c30-96a5-82f1afe2d13e}</UniqueIdentifier>
+      <Extensions>GreenJuiceTeam.iOS\Images.xcassets\AppIcon.appiconset\*</Extensions>
+    </Filter>
+    <Filter Include="GreenJuiceTeam.iOS\Supporting Files">
+      <UniqueIdentifier>{6ab28b3a-326d-4224-bed9-e42be7747cce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{364f50e9-3a6f-4e88-9c12-87461180af84}</UniqueIdentifier>
+      <Extensions>res\*</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GreenJuiceTeam.iOS\AppDelegate.mm">
+      <Filter>GreenJuiceTeam.iOS</Filter>
+    </ClCompile>
+    <ClCompile Include="GreenJuiceTeam.iOS\GameViewController.mm">
+      <Filter>GreenJuiceTeam.iOS</Filter>
+    </ClCompile>
+    <ClCompile Include="GreenJuiceTeam.iOS\main.mm">
+      <Filter>GreenJuiceTeam.iOS\Supporting Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities.mm">
+      <Filter>GreenJuiceTeam.iOS</Filter>
+    </ClCompile>
+    <ClInclude Include="GreenJuiceTeam.iOS\AppDelegate.h">
+      <Filter>GreenJuiceTeam.iOS</Filter>
+    </ClInclude>
+    <ClInclude Include="GreenJuiceTeam.iOS\GameViewController.h">
+      <Filter>GreenJuiceTeam.iOS</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities.h">
+      <Filter>GreenJuiceTeam.iOS</Filter>
+    </ClInclude>
+    <Content Include="GreenJuiceTeam.iOS\Base.lproj\Main.storyboard">
+      <Filter>GreenJuiceTeam.iOS</Filter>
+    </Content>
+    <Content Include="GreenJuiceTeam.iOS\Images.xcassets\AppIcon.appiconset\Contents.json">
+      <Filter>GreenJuiceTeam.iOS\Images.xcassets\AppIcon.appiconset</Filter>
+    </Content>
+    <Content Include="res\logo.png">
+      <Filter>res</Filter>
+    </Content>
+    <InfoPlist Include="GreenJuiceTeam.iOS\Info.plist">
+      <Filter>GreenJuiceTeam.iOS\Supporting Files</Filter>
+    </InfoPlist>
+    <None Include="..\GreenJuiceTeam.iOS.StaticLibrary\x64\Debug\GreenJuiceTeam.iOS.StaticLibrary.xcodeproj" />
+  </ItemGroup>
+</Project>
